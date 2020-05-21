@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\WangEditor;
+namespace Liuhelong\laravelAdmin\WangEditor;
 
 use Encore\Admin\Extension;
 
