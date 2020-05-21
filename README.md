@@ -10,7 +10,7 @@ prower by https://github.com/laravel-admin-extensions/wangEditor
 ## 安装
 
 ```bash
-composer require liuhelong/laravel-admin/wang-editor
+composer require liuhelong/laravel-admin-config
 ```
 
 然后
