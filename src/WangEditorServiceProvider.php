@@ -1,10 +1,11 @@
 <?php
 
-namespace Encore\WangEditor;
+namespace Liuhelong\laravelAdmin\WangEditor;
 
 use Encore\Admin\Admin;
 use Encore\Admin\Form;
 use Illuminate\Support\ServiceProvider;
+use Route;
 
 class WangEditorServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,7 @@ class WangEditorServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole() && $assets = $extension->assets()) {
             $this->publishes(
-                [$assets => public_path('vendor/laravel-admin-ext/wang-editor')],
+                [$assets => public_path('vendor/liuhelong/laravel-admin/wang-editor')],
                 'laravel-admin-wangEditor'
             );
         }
@@ -31,5 +32,7 @@ class WangEditorServiceProvider extends ServiceProvider
         Admin::booting(function () {
             Form::extend('editor', Editor::class);
         });
+		
+		Route::post('/admin/uploadImage', 'Liuhelong\laravelAdmin\WangEditor\UploadImage@index');
     }
 }
