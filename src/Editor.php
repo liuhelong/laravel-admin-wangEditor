@@ -1,6 +1,6 @@
 <?php
 
-namespace Liuhelong\WangEditor;
+namespace Liuhelong\laravelAdmin\WangEditor;
 
 use Encore\Admin\Form\Field;
 
