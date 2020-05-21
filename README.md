@@ -32,11 +32,11 @@ php artisan vendor:publish --tag=laravel-admin-wangEditor
             'config' => [
                 //配置图片上传地址，不然会用base64处理图片
                 'uploadImgServer' => '/admin/uploadImage',
-	            'debug'=>false,
-		        //上传的图片大小限制
-		        'uploadImgMaxSize' => 3 * 1024 * 1024,
-		        //上传图片的传递数组名
-		        'uploadFileName' => 'image[]',
+	    	'debug'=>false,
+		//上传的图片大小限制
+		'uploadImgMaxSize' => 3 * 1024 * 1024,
+		//上传图片的传递数组名
+		'uploadFileName' => 'image[]',
             ]
         ]
     ]
