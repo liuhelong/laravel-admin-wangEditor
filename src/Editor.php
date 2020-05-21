@@ -1,6 +1,6 @@
 <?php
 
-namespace Encore\WangEditor;
+namespace Liuhelong\WangEditor;
 
 use Encore\Admin\Form\Field;
 
