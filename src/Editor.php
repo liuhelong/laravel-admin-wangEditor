@@ -9,11 +9,11 @@ class Editor extends Field
     protected $view = 'laravel-admin-wangEditor::editor';
 
     protected static $css = [
-        'vendor/liuhelong/wang-editor/wangEditor-3.0.10/release/wangEditor.css',
+        'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor.css',
     ];
 
     protected static $js = [
-        'vendor/liuhelong/wang-editor/wangEditor-3.0.10/release/wangEditor.js',
+        'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor.js',
     ];
 
     public function render()
