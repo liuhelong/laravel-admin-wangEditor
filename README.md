@@ -23,7 +23,7 @@ php artisan vendor:publish --tag=laravel-admin-wangEditor
 在`config/admin.php`文件的`extensions`，加上属于这个扩展的一些配置
 ```php
     'extensions' => [
-		'wang-editor' => [
+	'wang-editor' => [
         
             // 如果要关掉这个扩展，设置为false
             'enable' => true,
