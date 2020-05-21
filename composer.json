@@ -1,14 +1,14 @@
 {
-    "name": "laravel-admin-ext/wang-editor",
+    "name": "liuhelong/laravel-admin/wang-editor",
     "description": "wangEditor extension for laravel-admin",
     "type": "library",
     "keywords": ["laravel-admin", "extension", "editor"],
-    "homepage": "https://github.com/laravel-admin-extensions/wangEditor",
+    "homepage": "https://github.com/liuhelong/laravel-admin-wangEditor",
     "license": "MIT",
     "authors": [
         {
-            "name": "song",
-            "email": "zosong@126.com"
+            "name": "liuhelong",
+            "email": "854583481@qq.com"
         }
     ],
     "require": {
@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Encore\\WangEditor\\": "src/"
+            "Liuhelong\\laravelAdmin\\WangEditor\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Encore\\WangEditor\\WangEditorServiceProvider"
+                "Liuhelong\\laravelAdmin\\WangEditor\\WangEditorServiceProvider"
             ]
         }
     }
