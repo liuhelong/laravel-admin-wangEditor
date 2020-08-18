@@ -10,10 +10,12 @@ class Editor extends Field
 
     protected static $css = [
         'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor.css',
+		'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor-long.css',
     ];
 
     protected static $js = [
         'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor.js',
+		'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor-long.js',
     ];
 
     public function render()
@@ -47,7 +49,8 @@ class Editor extends Field
         $('#input-$id').val(html);
     }
     editor.create();
-    
+    E.hr.init('#{$this->id}',editor);//插入hr
+    E.fullscreen.init('#{$this->id}');//插入全屏
     $('#{$this->id}').attr('initialized', 1);
 })(jQuery);
 EOT;
