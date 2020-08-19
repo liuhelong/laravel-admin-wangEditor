@@ -2,7 +2,6 @@
  *  龙哥自定义 拓展部分
  */
  
-var editor;
 
 //自定义全屏按钮
 window.wangEditor.fullscreen = {
@@ -24,24 +23,29 @@ window.wangEditor.fullscreen = {
 window.wangEditor.hr = {
 	// editor create之后调用
 	init: function(editorSelector,Editor){
-		$(editorSelector + " .w-e-toolbar").append('<div class="w-e-menu"><i class="fa fa-arrows-h" onclick="window.wangEditor.hr.insert(\'' + editorSelector + '\')"><i/></div>');
+		eval(editorSelector + '_hr = new Hr(Editor)');
 		
-		editor = Editor;
+		$("#"+ editorSelector + " .w-e-toolbar").append('<div class="w-e-menu"><i class="fa fa-arrows-h" onclick="'+ editorSelector + '_hr.insert()"><i/></div>');
+		
+		
 	},
-	insert: function(editorSelector){
+};
+
+function Hr(Editor){
+	this.editor = Editor;
+	this.insert = function(){
 		
-		command('insertHorizontalRule');// 插入下划线
+		command(this.editor,'insertHorizontalRule');// 插入下划线
 		//editor.cmd.do('insertParagraph');
-		editor.selection.createEmptyRange();
-		command('formatBlock','P');
+		this.editor.selection.createEmptyRange();
+		command(this.editor,'formatBlock','P');
 		return;
 
 	}
-};
-
-
-function command(name, value) {
+}
+function command(editor,name, value) {
 	// 如果无选区，忽略
+	console.log(editor)
 	if (!editor.selection.getRange()) {
 		console.log('无选区')
 		return;
