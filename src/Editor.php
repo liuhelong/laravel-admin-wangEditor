@@ -39,17 +39,17 @@ class Editor extends Field
     }
 
     var E = window.wangEditor
-    var editor = new E('#{$this->id}');
+    var editor_{$this->id} = new E('#{$this->id}');
     
-    editor.customConfig.uploadImgParams = {_token: '$token'}
+    editor_{$this->id}.customConfig.uploadImgParams = {_token: '$token'}
     
-    Object.assign(editor.customConfig, {$config})
+    Object.assign(editor_{$this->id}.customConfig, {$config})
     
-    editor.customConfig.onchange = function (html) {
+    editor_{$this->id}.customConfig.onchange = function (html) {
         $('#input-$id').val(html);
     }
-    editor.create();
-    E.hr.init('#{$this->id}',editor);//插入hr
+    editor_{$this->id}.create();
+    E.hr.init('{$this->id}',editor_{$this->id});//插入hr
     E.fullscreen.init('#{$this->id}');//插入全屏
     $('#{$this->id}').attr('initialized', 1);
 })(jQuery);
