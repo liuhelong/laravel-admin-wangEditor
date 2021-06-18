@@ -3,15 +3,22 @@
 namespace Liuhelong\laravelAdmin\WangEditor;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UploadImage
 {
 	// 独立的图片上传接口
 	public function index(Request $request)
 	{
+		$request->validate([
+			'image.*' => 'file|mimes:jpeg,bmp,png',
+			//'file' => 'nullable|mimes:jpeg,bmp,png,pdf'
+		]);
+		
 		$paths = array();
 		foreach($request->image as $image){
-			$paths[] = config('filesystems.disks.admin.url').'/'.$image->store('images','admin');
+			
+			$paths[] = Storage::disk('admin')->url($image->store('images','admin'));
 		
 		}
 		return response()->json([
