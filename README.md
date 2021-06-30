@@ -50,5 +50,5 @@ php artisan vendor:publish --tag=laravel-admin-wangEditor
 
 在form表单中使用它：
 ```php
-$form->editor('content');
+$form->editor('content')->move('my_images');
 ```
