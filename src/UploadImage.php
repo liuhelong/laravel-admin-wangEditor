@@ -18,7 +18,7 @@ class UploadImage
 		$paths = array();
 		foreach($request->image as $image){
 			
-			$paths[] = Storage::disk('admin')->url($image->store('images','admin'));
+			$paths[] = Storage::disk('admin')->url($image->store($request->directory??'images','admin'));
 		
 		}
 		return response()->json([
