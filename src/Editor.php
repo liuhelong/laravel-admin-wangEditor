@@ -18,6 +18,11 @@ class Editor extends Field
 		'vendor/liuhelong/laravel-admin/wang-editor/wangEditor-3.0.10/release/wangEditor-long.js',
     ];
 
+	public function move($directory){
+		config(['admin.extensions.wang-editor.config.uploadImgParams'=>[
+			'directory'=>$directory
+		]]);
+	}
     public function render()
     {
         $id = $this->formatName($this->id);
